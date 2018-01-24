@@ -7,8 +7,14 @@ class App extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			deadline: 'December, 25, 2018'
+			deadline: 'December 25, 2018'
 		};
+	}
+
+	changeDeadline() {
+		//never mutate or change state directly.
+		//this.state.deadline = 'November 25, 2018'
+		this.setState({deadline: 'November 25, 2018'})
 	}
 
 	render() {
@@ -25,7 +31,7 @@ class App extends Component {
 				</div>
 				<div>
 					<input placeholder='new date'/>
-					<button>Submit</button>
+					<button onClick={() => this.changeDeadline()}>Submit</button>
 				</div>
 			</div>
 		)
